@@ -12,6 +12,28 @@
         naidapa_theme.highlight_active_route();
         naidapa_theme.mutate_workspace_container();
         naidapa_theme.mutate_custom_elements();
+        naidapa_theme.inject_navbar_toggle();
+    };
+
+    naidapa_theme.inject_navbar_toggle = function () {
+        if ($('.header-toggle').length === 0) {
+            const toggle_html = '<span class="header-toggle" style="margin-right: 15px; cursor: pointer; display: flex; align-items: center; font-size: 22px; color: var(--text-primary);"> <iconify-icon icon="line-md:menu-fold-left"></iconify-icon></span>';
+            $('.navbar-brand').before(toggle_html);
+
+            // Bind click event to toggle sidebar
+            $('.header-toggle').on('click', function () {
+                const $body = $('body');
+                const $icon = $(this).find('iconify-icon');
+                
+                if ($body.hasClass('sidebar-menu-opened')) {
+                    $body.removeClass('sidebar-menu-opened');
+                    $icon.attr('icon', 'line-md:menu-fold-left');
+                } else {
+                    $body.addClass('sidebar-menu-opened');
+                    $icon.attr('icon', 'line-md:menu-fold-right');
+                }
+            });
+        }
     };
 
     naidapa_theme.mutate_custom_elements = function () {

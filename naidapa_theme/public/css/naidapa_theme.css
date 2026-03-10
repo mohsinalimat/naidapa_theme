@@ -101,8 +101,7 @@
     --app-transition: all 0.3s ease;
     --light-gray: #f4f7f8;
 
-    /* Modern Effects */
-    --glass-bg: rgba(255, 255, 255, 0.7);
+    /* UI Elements */
     --glass-border: 1px solid rgba(255, 255, 255, 0.3);
     --glass-shadow: var(--box-shadow);
     --backdrop-blur: blur(12px);
@@ -132,6 +131,25 @@ body.naidapa-theme-active[data-route=""] .sidebar-toggle-btn {
     display: none !important;
 }
 
+/* Style Frappe Native Navbar instead of hiding it */
+body.naidapa-theme-active .sticky-top .navbar {
+    background-color: var(--surface-color);
+    backdrop-filter: var(--backdrop-blur);
+    border-bottom: var(--glass-border);
+    padding: 12px 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Hide Frappe's native application logo in the navbar */
+body.naidapa-theme-active .sticky-top .navbar-brand.navbar-home {
+    display: none !important;
+}
+
+/* Hide the custom empty header since we are styling the native one */
+body.naidapa-theme-active .header-main {
+    display: none !important;
+}
+
 /* Force container fluid if JS hasn't swapped the class yet */
 body.naidapa-theme-active .container {
     max-width: 100% !important;
@@ -156,9 +174,9 @@ body.naidapa-theme-active .container {
     flex-direction: column;
 }
 
-/* Application Header */
+/* Application Header overrides */
 .header-main {
-    background-color: var(--glass-bg);
+    background-color: var(--surface-color);
     backdrop-filter: var(--backdrop-blur);
     padding: 15px 0;
     position: sticky;
@@ -254,9 +272,21 @@ nav .app-nav .main-nav>li.active>a iconify-icon {
 }
 
 /* Sidebar Toggle and Responsiveness */
+@media (min-width: 992px) {
+
+    /* When sidebar is collapsed on desktop */
+    body.sidebar-menu-opened nav {
+        margin-left: -286px;
+    }
+
+    body.sidebar-menu-opened .app-wrapper .app-content {
+        padding-left: 0;
+    }
+}
+
 @media (max-width: 991px) {
     nav {
-        margin-left: -260px;
+        margin-left: -286px;
     }
 
     .app-wrapper .app-content {
@@ -265,7 +295,8 @@ nav .app-nav .main-nav>li.active>a iconify-icon {
         width: 100%;
     }
 
-    .sidebar-menu-opened nav {
+    /* On mobile, sidebar-menu-opened shows the sidebar */
+    body.sidebar-menu-opened nav {
         margin-left: 0;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
