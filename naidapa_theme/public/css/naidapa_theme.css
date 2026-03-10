@@ -122,9 +122,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Prevent layout jumping */
-body.naidapa-theme-active .layout-side-section,
-body.naidapa-theme-active .sidebar-toggle-btn {
+/* Prevent layout jumping on Homepage only */
+body.naidapa-theme-active[data-route="Workspaces"] .layout-side-section,
+body.naidapa-theme-active[data-route="Workspaces"] .sidebar-toggle-btn,
+body.naidapa-theme-active[data-route^="Workspaces/"] .layout-side-section,
+body.naidapa-theme-active[data-route^="Workspaces/"] .sidebar-toggle-btn,
+body.naidapa-theme-active[data-route=""] .layout-side-section,
+body.naidapa-theme-active[data-route=""] .sidebar-toggle-btn {
     display: none !important;
 }
 
@@ -132,11 +136,6 @@ body.naidapa-theme-active .sidebar-toggle-btn {
 body.naidapa-theme-active .container {
     max-width: 100% !important;
     width: 100% !important;
-}
-
-/* Hide Frappe Native Sidebar */
-.layout-side-section {
-    display: none !important;
 }
 
 /* App Wrapper based on KI Admin */
@@ -213,10 +212,14 @@ nav .app-nav .main-nav>li>a {
     text-decoration: none;
 }
 
-nav .app-nav .main-nav>li>a:hover,
-nav .app-nav .main-nav>li.active>a {
+nav .app-nav .main-nav>li>a:hover {
     background-color: rgba(var(--primary), .1);
     color: rgba(var(--primary), 1);
+}
+
+nav .app-nav .main-nav>li.active>a {
+    background-color: #12715b !important;
+    color: #ffffff !important;
 }
 
 nav .app-nav .main-nav>li>a svg {
@@ -227,9 +230,20 @@ nav .app-nav .main-nav>li>a svg {
     transition: var(--app-transition);
 }
 
+nav .app-nav .main-nav>li>a iconify-icon {
+    transition: var(--app-transition);
+}
+
 nav .app-nav .main-nav>li:hover>a svg,
-nav .app-nav .main-nav>li.active>a svg {
+nav .app-nav .main-nav>li:hover>a iconify-icon {
     stroke: rgba(var(--primary), 1);
+    color: rgba(var(--primary), 1);
+}
+
+nav .app-nav .main-nav>li.active>a svg,
+nav .app-nav .main-nav>li.active>a iconify-icon {
+    stroke: #ffffff !important;
+    color: #ffffff !important;
 }
 
 /* Responsive container adjustment */

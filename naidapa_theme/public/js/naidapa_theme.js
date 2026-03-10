@@ -8,6 +8,12 @@
         naidapa_theme.run_patches();
     };
 
+    naidapa_theme.run_patches = function () {
+        naidapa_theme.highlight_active_route();
+        naidapa_theme.mutate_workspace_container();
+        naidapa_theme.mutate_custom_elements();
+    };
+
     naidapa_theme.mutate_custom_elements = function () {
         const changes = [
             { selector: '.old-style-class', add: 'new-style-class', remove: 'old-style-class' },
@@ -20,32 +26,27 @@
         });
     };
 
-    naidapa_theme.run_patches = function () {
-        naidapa_theme.highlight_active_route();
-        naidapa_theme.remove_native_elements();
-        naidapa_theme.mutate_workspace_container();
-        naidapa_theme.mutate_custom_elements();
-    };
-
     naidapa_theme.highlight_active_route = function () {
         const current_route = window.location.pathname;
-        $('.naidapa-nav-item').removeClass('active');
+        $('.main-nav > li').removeClass('active');
 
-        // Exact & Fuzzy matching for custom nav items
-        $(`.naidapa-nav-item[href="${current_route}"]`).addClass('active');
+        // Exact matching
+        $(`.main-nav > li > a[href="${current_route}"]`).parent().addClass('active');
+
+        // Fuzzy matching
         if (current_route && current_route !== "/app") {
-            $('.naidapa-nav-item').each(function () {
+            $('.main-nav > li > a').each(function () {
                 let href = $(this).attr('href');
                 if (href && current_route.startsWith(href) && href !== "/app") {
-                    $(this).addClass('active');
+                    $(this).parent().addClass('active');
                 }
             });
         }
     };
 
-    naidapa_theme.remove_native_elements = function () {
-        $('.layout-side-section, .sidebar-toggle-btn').remove();
-    };
+    //naidapa_theme.remove_native_elements = function () {
+    //    $('.layout-side-section, .sidebar-toggle-btn').remove();
+    //};
 
     naidapa_theme.mutate_workspace_container = function () {
         const selectors = [
