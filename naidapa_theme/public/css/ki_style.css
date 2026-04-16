@@ -12442,7 +12442,7 @@ body[style="overflow: hidden; padding-right: 17px;"] .app-wrapper nav.horizontal
   opacity: 1;
 }
 
-nav {
+nav.vertical-sidebar {
   width: var(--sidebar-width);
   height: 100vh;
   display: inline-block;

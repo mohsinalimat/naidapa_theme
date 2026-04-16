@@ -341,31 +341,103 @@ nav .app-nav .main-nav>li.active>a iconify-icon {
     display: none !important;
 }
 
-/* 3. Button/Link Items (The Rows) */
-.link-item {
+/* 3. The Widget Box Pattern Base */
+.links-widget-box {
+    background-color: var(--surface-color) !important;
+    background-repeat: no-repeat !important;
+    padding: 1.2rem !important;
+    position: relative;
+    overflow: hidden;
+    /* Ensure vector curves don't clip outside rounded corners */
+}
+
+/* 6 Dynamic Overlapping Fluid "Wave" Patterns */
+/* Generates sharp, crisp curved vectors overlapping at bottom right and top-left */
+.ce-block:nth-child(6n+1) .links-widget-box {
+    background-image:
+        radial-gradient(circle at 100% 100%, rgba(77, 182, 172, 0.11) 25%, transparent 25.5%),
+        radial-gradient(ellipse 120% 80% at 85% 110%, rgba(77, 182, 172, 0.07) 40%, transparent 40.5%),
+        radial-gradient(ellipse 80% 100% at 0% 0%, rgba(77, 182, 172, 0.09) 20%, transparent 20.5%),
+        radial-gradient(circle at -5% 5%, rgba(77, 182, 172, 0.06) 30%, transparent 30.5%) !important;
+}
+
+.ce-block:nth-child(6n+2) .links-widget-box {
+    background-image:
+        radial-gradient(circle at 90% 110%, rgba(77, 182, 172, 0.09) 30%, transparent 30.5%),
+        radial-gradient(ellipse 80% 120% at 100% 85%, rgba(77, 182, 172, 0.06) 35%, transparent 35.5%),
+        radial-gradient(circle at 0% 0%, rgba(77, 182, 172, 0.07) 25%, transparent 25.5%),
+        radial-gradient(ellipse 100% 80% at 10% -10%, rgba(77, 182, 172, 0.10) 35%, transparent 35.5%) !important;
+}
+
+.ce-block:nth-child(6n+3) .links-widget-box {
+    background-image:
+        radial-gradient(ellipse 100% 100% at 115% 90%, rgba(77, 182, 172, 0.10) 35%, transparent 35.5%),
+        radial-gradient(ellipse 130% 90% at 75% 115%, rgba(77, 182, 172, 0.07) 45%, transparent 45.5%),
+        radial-gradient(ellipse 90% 110% at -5% -5%, rgba(77, 182, 172, 0.09) 30%, transparent 30.5%),
+        radial-gradient(ellipse 110% 90% at 5% -15%, rgba(77, 182, 172, 0.06) 40%, transparent 40.5%) !important;
+}
+
+.ce-block:nth-child(6n+4) .links-widget-box {
+    background-image:
+        radial-gradient(ellipse 90% 110% at 105% 95%, rgba(77, 182, 172, 0.11) 25%, transparent 25.5%),
+        radial-gradient(circle at 65% 120%, rgba(77, 182, 172, 0.07) 40%, transparent 40.5%),
+        radial-gradient(circle at -10% -10%, rgba(77, 182, 172, 0.11) 35%, transparent 35.5%),
+        radial-gradient(ellipse 80% 120% at 15% -5%, rgba(77, 182, 172, 0.07) 25%, transparent 25.5%) !important;
+}
+
+.ce-block:nth-child(6n+5) .links-widget-box {
+    background-image:
+        radial-gradient(ellipse 110% 120% at 95% 115%, rgba(77, 182, 172, 0.10) 40%, transparent 40.5%),
+        radial-gradient(ellipse 80% 100% at 120% 80%, rgba(77, 182, 172, 0.06) 30%, transparent 30.5%),
+        radial-gradient(ellipse 100% 100% at -15% 10%, rgba(77, 182, 172, 0.10) 20%, transparent 20.5%),
+        radial-gradient(ellipse 120% 80% at 0% -5%, rgba(77, 182, 172, 0.06) 35%, transparent 35.5%) !important;
+}
+
+.ce-block:nth-child(6n+6) .links-widget-box {
+    background-image:
+        radial-gradient(ellipse 120% 100% at 105% 100%, rgba(77, 182, 172, 0.09) 30%, transparent 30.5%),
+        radial-gradient(ellipse 100% 130% at 85% 110%, rgba(77, 182, 172, 0.07) 45%, transparent 45.5%),
+        radial-gradient(circle at 5% -10%, rgba(77, 182, 172, 0.07) 30%, transparent 30.5%),
+        radial-gradient(ellipse 90% 100% at -10% 15%, rgba(77, 182, 172, 0.09) 25%, transparent 25.5%) !important;
+}
+
+/* 4. Button/Link Items (The Rows) inside Links Widget */
+.links-widget-box .link-item {
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
-    padding: 10px 14px !important;
-    margin: 4px 12px !important;
-    border-radius: 5px !important;
+    position: relative;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    /* Spaced like separate cards */
+    border-radius: 8px !important;
     color: var(--font-color) !important;
     font-weight: 500 !important;
     font-size: 14px !important;
-    transition: var(--app-transition) !important;
-    background: transparent !important;
-    border: none !important;
+    background: var(--surface-color) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-left: 4px solid var(--primary-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     text-decoration: none !important;
 }
 
-/* Hover Effect for Links */
-.link-item:hover {
-    background-color: rgba(var(--primary), .1) !important;
-    color: rgba(var(--primary), 1) !important;
+/* Faux Soft Rounded Icon is completely removed for cleaner card look */
+.links-widget-box .link-item::before {
+    display: none !important;
+}
+
+/* Hover Effect for Link Cards */
+.links-widget-box .link-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05) !important;
+    border-right-color: rgba(0, 0, 0, 0.02) !important;
+    border-top-color: rgba(0, 0, 0, 0.02) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.02) !important;
+    background: #fdfdfd !important;
 }
 
 /* 4. The Content and Text */
-.link-content {
+.links-widget-box .link-content {
     display: flex !important;
     align-items: center !important;
     width: 100%;
@@ -373,23 +445,20 @@ nav .app-nav .main-nav>li.active>a iconify-icon {
 }
 
 /* 5. The Arrow Icon (SVG) */
-.link-item svg.es-icon {
-    width: 16px !important;
-    height: 16px !important;
-    opacity: 0.5;
-    transition: var(--app-transition);
+.links-widget-box .link-item svg.es-icon {
+    width: 18px !important;
+    height: 18px !important;
+    background: transparent !important;
+    padding: 0 !important;
     stroke: var(--font-light-color) !important;
     fill: none !important;
+    transition: all 0.3s ease;
 }
 
 /* Show Arrow on Hover */
-.link-item:hover svg.es-icon {
-    opacity: 1;
-    stroke: rgba(var(--primary), 1) !important;
-}
-
-.link-item:hover svg.es-icon use {
-    stroke: rgba(var(--primary), 1) !important;
+.links-widget-box .link-item:hover svg.es-icon {
+    stroke: var(--primary-color) !important;
+    transform: translateX(3px);
 }
 
 /* Hide Footer if empty */
@@ -560,4 +629,38 @@ span.sidebar-item-label {
     padding: 10px;
     box-shadow: var(--box-shadow);
     border: 1px solid var(--border-color-frappe);
+}
+
+/* -------------------------------------------------------------------------- */
+/* PREMIUM GRADIENT CHART OVERRIDES (SPLINES & DOTTED END)                    */
+/* -------------------------------------------------------------------------- */
+
+.frappe-chart .line-graph-path {
+    stroke: url(#naidapa-gradient) !important;
+    stroke-width: 4.5px !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+
+    /* 
+      CSS Mask Trick: 
+      Layer 1 is solid black for 70% of the chart width, then transparent.
+      Layer 2 is a repeating dotted pattern across the entire width.
+      Composited together, 70% is solid, the last 30% is rendering dots!
+    */
+    -webkit-mask-image:
+        linear-gradient(to right, black 70%, transparent 70.5%),
+        repeating-linear-gradient(to right, black 0px, black 6px, transparent 6px, transparent 14px);
+    mask-image:
+        linear-gradient(to right, black 70%, transparent 70.5%),
+        repeating-linear-gradient(to right, black 0px, black 6px, transparent 6px, transparent 14px);
+}
+
+/* Hide scattered data points per image */
+.frappe-chart .dataset-units circle {
+    display: none !important;
+}
+
+/* Remove default faint fill so line is distinct */
+.frappe-chart path.region-fill {
+    display: none !important;
 }
