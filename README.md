@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>✨ Naidapa Theme (v15)</h1>
+  <h1>✨ ERPNext Desk Naidapa Theme (v15)</h1>
   <p><i>A beautifully crafted, modern glassmorphic theme for Frappe and ERPNext</i></p>
 </div>
 
