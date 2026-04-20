@@ -86,7 +86,10 @@ h6,
     min-height: var(--np-navbar-height) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    z-index: 1050 !important;
+    overflow: visible !important;
 }
+
 
 .navbar .navbar-brand {
     font-weight: 700 !important;
@@ -124,7 +127,10 @@ h6,
     box-shadow: var(--np-shadow-card) !important;
     padding: 8px !important;
     min-width: 200px;
+    z-index: 9999 !important;
+    margin-top: 8px !important;
 }
+
 
 .navbar .dropdown-menu .dropdown-item {
     border-radius: var(--np-radius-sm);
