@@ -37,9 +37,14 @@ app_include_js = [
     "/assets/naidapa_theme/js/naidapa_theme.js"
 ]
 
-# include js, css files in header of web template
-# web_include_css = "/assets/naidapa_theme/css/naidapa_theme.css"
-# web_include_js = "/assets/naidapa_theme/js/naidapa_theme.js"
+# include js, css files in header of web template (portal/customer pages)
+web_include_css = [
+    "/assets/naidapa_theme/css/naidapa_portal.css"
+]
+web_include_js = [
+    "/assets/naidapa_theme/vendor/animated_icon/iconify-icon.min.js",
+    "/assets/naidapa_theme/js/naidapa_portal.js"
+]
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "naidapa_theme/public/scss/website"
@@ -52,7 +57,19 @@ app_include_js = [
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Workspace" : "public/js/workspace_icon_picker.js"}
+
+
+# Website route rewrites
+website_route_rules = [
+    {"from_route": "/dashboard", "to_route": "portal_dashboard"},
+]
+
+# Portal menu items
+portal_menu_items = [
+    {"title": "Dashboard", "route": "/dashboard", "role": "Customer"},
+]
+
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
