@@ -200,15 +200,6 @@ select.input-with-feedback {
     line-height: 1.5 !important;
 }
 
-
-
-/* Fix checkbox and radios mapping */
-.frappe-control input[type="checkbox"],
-.frappe-control input[type="radio"] {
-    min-height: auto !important;
-    cursor: pointer;
-}
-
 /* Prevent layout jumping on Homepage only */
 body.naidapa-theme-active[data-route="Workspaces"] .layout-side-section,
 body.naidapa-theme-active[data-route="Workspaces"] .sidebar-toggle-btn,
