@@ -121,24 +121,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- GLOBAL SYSTEM INPUT TWEAKS (KI-ADMIN BASE INPUT STYLE) --- */
-.form-control:not([type="checkbox"]):not([type="radio"]),
-.input-with-feedback:not([type="checkbox"]):not([type="radio"]),
-.frappe-control input:not([type="checkbox"]):not([type="radio"]),
-.frappe-control select,
-.frappe-control textarea,
-.awesomplete>input {
-    background-color: #ffffff !important;
-    border: 1px solid #dcdfe3 !important;
-    border-radius: 6px !important;
-    color: #3b3f5c !important;
-    padding: 8px 14px !important;
-    font-size: 14px !important;
-    min-height: 40px !important;
-    box-shadow: none !important;
-    transition: all 0.2s ease-in-out !important;
-    line-height: 1.5 !important;
-}
 
 /* Fix select vertical alignment */
 .frappe-control select,
@@ -148,50 +130,6 @@ select.input-with-feedback {
     padding-bottom: 0 !important;
     height: 40px !important;
     line-height: normal !important;
-}
-
-/* Hover effect */
-.form-control:not([type="checkbox"]):not([type="radio"]):hover,
-.input-with-feedback:not([type="checkbox"]):not([type="radio"]):hover,
-.frappe-control input:not([type="checkbox"]):not([type="radio"]):hover,
-.frappe-control select:hover,
-.awesomplete>input:hover {
-    border-color: #b0b9c4 !important;
-}
-
-/* Focus effect (Teal Highlight) */
-.form-control:not([type="checkbox"]):not([type="radio"]):focus,
-.input-with-feedback:not([type="checkbox"]):not([type="radio"]):focus,
-.frappe-control input:not([type="checkbox"]):not([type="radio"]):focus,
-.frappe-control select:focus,
-.frappe-control textarea:focus,
-.awesomplete>input:focus {
-    border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 3px rgba(15, 98, 106, 0.15) !important;
-    background-color: #ffffff !important;
-    outline: none !important;
-}
-
-/* Disabled / Read-Only Fields (KI-Admin Base Style) */
-.form-control:not([type="checkbox"]):not([type="radio"]):disabled,
-.form-control:not([type="checkbox"]):not([type="radio"])[readonly],
-.input-with-feedback:not([type="checkbox"]):not([type="radio"]):disabled,
-.input-with-feedback:not([type="checkbox"]):not([type="radio"])[readonly],
-.frappe-control input:not([type="checkbox"]):not([type="radio"]):disabled,
-.frappe-control input:not([type="checkbox"]):not([type="radio"])[readonly],
-.frappe-control select:disabled,
-.frappe-control textarea:disabled,
-.control-value.like-disabled-input {
-    background-color: #f8f9fa !important;
-    border: 1px solid #dcdfe3 !important;
-    border-radius: 6px !important;
-    color: #495057 !important;
-    padding: 8px 14px !important;
-    font-size: 14px !important;
-    min-height: 40px !important;
-    box-shadow: none !important;
-    cursor: default !important;
-    font-weight: 500 !important;
 }
 
 .control-value.like-disabled-input {
