@@ -935,3 +935,29 @@ span.sidebar-item-label {
     opacity: 0.1 !important;
     z-index: 1 !important;
 }
+
+/* --- FIX FRAPPE FILE UPLOADER CHECKBOXES --- */
+/* Override KI Admin's overly broad `.file-uploader label` selector */
+.file-uploader label.frappe-checkbox {
+    width: auto !important;
+    height: auto !important;
+    font-size: var(--text-sm) !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    border: none !important;
+    background-color: transparent !important;
+    padding-top: 0.25rem !important;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Style the native checkbox to match the theme color */
+.file-uploader label.frappe-checkbox input[type="checkbox"] {
+    accent-color: var(--primary-color) !important;
+    width: 16px !important;
+    height: 16px !important;
+    cursor: pointer;
+    margin: 0 !important;
+}
