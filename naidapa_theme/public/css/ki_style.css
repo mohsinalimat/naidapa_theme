@@ -13141,7 +13141,6 @@ div .semi-nav~footer {
   height: 100%;
   transition: var(--app-transition);
   box-shadow: var(--box-shadow);
-  overflow: hidden;
 }
 
 .app-wrapper .app-content .container-xxl {
