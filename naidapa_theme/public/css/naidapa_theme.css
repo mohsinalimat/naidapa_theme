@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* --- START CUSTOM NAV OVERRIDES --- */
-
-
-
 /* --- CUSTOM MENU ITEM STYLES --- */
+.page-container {
+    background: var(--np-bg) !important;
+}
 
 .naidapa-nav-group {
     margin-bottom: 24px;
@@ -79,7 +78,7 @@
 
     /* Frappe Native Primary Variables */
     --primary: #0f626a;
-
+    --np-bg: #f5fbfb;
     --font-color: #082f32;
     --body-color: #f5fbfb;
     --bodybg-color: #f6f7fa;
