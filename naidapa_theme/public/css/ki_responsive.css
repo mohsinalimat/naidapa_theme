@@ -19,8 +19,8 @@
   --border_color: rgba(0, 0, 0, 0.21);
   --black: 0, 0, 0;
   --border_color: #ebedf0;
-  --bs-dropdown-link-active-color: rgba(var(--primary), 1);
-  --bs-dropdown-link-active-bg: rgba(var(--primary), 0.2);
+  --bs-dropdown-link-active-color: rgba(var(--ki-primary), 1);
+  --bs-dropdown-link-active-bg: rgba(var(--ki-primary), 0.2);
   --facebook: 59, 89, 152;
   --twitter: 85, 172, 238;
   --pinterest: 189, 8, 28;
@@ -35,7 +35,7 @@
   --github: 0, 64, 93;
   --skype: 0, 175, 240;
   --snapchat: 255, 250, 55;
-  --box-shadow: 0 .1rem 0.5rem 0 rgba(var(--dark),.10);
+  --box-shadow: 0 .1rem 0.5rem 0 rgba(var(--ki-dark),.10);
   --hover-shadow: 0 0.5rem 2rem var(--light-gray);
   --app-transition: all 0.3s ease;
   --light-gray: #f4f7f8;
@@ -270,7 +270,7 @@ body.dark .tooltip-inner {
     padding: 0;
     background-color: transparent;
     border: none;
-    color: rgba(var(--primary), 1);
+    color: rgba(var(--ki-primary), 1);
     width: auto;
   }
   .profile-content .story-box .story .story-icon .h-45 {
@@ -981,39 +981,39 @@ body.dark .tooltip-inner {
     width: 100%;
   }
   .sign-in-bg .form-container {
-    background-color: rgba(var(--white), 0.6);
-    border: 1px solid rgba(var(--white), 0.8);
+    background-color: rgba(var(--ki-white), 0.6);
+    border: 1px solid rgba(var(--ki-white), 0.8);
     -webkit-backdrop-filter: blur(4px);
     border-radius: var(--app-border-radius);
     box-shadow: var(--box-shadow);
     padding: 20px !important;
   }
   .sign-in-bg .form-container h2 {
-    color: rgba(var(--primary), 1) !important;
+    color: rgba(var(--ki-primary), 1) !important;
   }
   .sign-in-bg .form-content-box {
     padding: 0;
   }
   .sign-in-bg .form-content-box p {
-    color: rgba(var(--primary), 1) !important;
+    color: rgba(var(--ki-primary), 1) !important;
   }
   .sign-in-bg .form-content-box p a {
-    color: rgba(var(--primary), 1) !important;
+    color: rgba(var(--ki-primary), 1) !important;
   }
   .sign-in-bg .form-content-box .form-control {
-    border: 1px solid rgba(var(--secondary), 0.4);
+    border: 1px solid rgba(var(--ki-secondary), 0.4);
   }
   .sign-in-bg .form-content-box i {
-    color: rgba(var(--primary), 1) !important;
+    color: rgba(var(--ki-primary), 1) !important;
   }
   .sign-in-bg .form-content-box label {
-    color: rgba(var(--primary), 1) !important;
+    color: rgba(var(--ki-primary), 1) !important;
   }
   .sign-in-bg .form-content-box .form-check-input {
-    background-color: rgba(var(--primary), 1) !important;
+    background-color: rgba(var(--ki-primary), 1) !important;
   }
   .sign-in-bg .form-content-box .form-floating .text-white {
-    color: rgba(var(--primary), 1) !important;
+    color: rgba(var(--ki-primary), 1) !important;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1461,13 +1461,13 @@ body.dark .tooltip-inner {
     display: flex;
     align-items: center;
     height: 100%;
-    background: rgba(var(--dark), 0.25);
+    background: rgba(var(--ki-dark), 0.25);
     -webkit-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
     padding: 10px;
     text-align: center;
     z-index: 1;
-    color: rgba(var(--white), 1);
+    color: rgba(var(--ki-white), 1);
   }
   .overlay-maintenance-card p {
     width: 100% !important;
@@ -1571,7 +1571,7 @@ body.dark .tooltip-inner {
     margin-left: inherit !important;
   }
   .app-side-timeline .side-timeline-section.left-side {
-    border-left: 2px dotted rgba(var(--dark), 0.1);
+    border-left: 2px dotted rgba(var(--ki-dark), 0.1);
     border-right: 0 !important;
   }
   .app-side-timeline .side-timeline-section.left-side .timeline-content {
@@ -1708,11 +1708,11 @@ body.dark .tooltip-inner {
     border: none;
     border-radius: inherit;
     text-align: center;
-    border: 1px solid rgba(var(--secondary), 0.4);
+    border: 1px solid rgba(var(--ki-secondary), 0.4);
   }
   .tab-wrapper .tabs .tab-link.active {
-    background-color: rgba(var(--primary), 1);
-    color: rgba(var(--white), 1);
+    background-color: rgba(var(--ki-primary), 1);
+    color: rgba(var(--ki-white), 1);
   }
   .board-item-content {
     padding: 0.5rem;
@@ -1823,7 +1823,7 @@ body.dark .tooltip-inner {
     flex-wrap: wrap;
   }
   .timeline-content .d-flex span {
-    color: rgba(var(--dark), 1);
+    color: rgba(var(--ki-dark), 1);
     font-weight: 500;
     font-size: 15px;
   }

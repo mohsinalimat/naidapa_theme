@@ -66,16 +66,20 @@
 
 
 :root {
-    /* KI Admin Base Palette */
-    --primary: 15, 98, 106;
-    --secondary: 98, 98, 98;
-    --success: 10, 185, 100;
-    --danger: 225, 78, 90;
-    --warning: 249, 193, 35;
-    --info: 65, 150, 250;
-    --light: 200, 185, 210;
-    --dark: 40, 35, 45;
-    --white: 255, 255, 255;
+    /* KI Admin Base Palette (Isolated with --ki- prefix to prevent Frappe UI breaks) */
+    --ki-primary: 15, 98, 106;
+    --ki-secondary: 98, 98, 98;
+    --ki-success: 10, 185, 100;
+    --ki-danger: 225, 78, 90;
+    --ki-warning: 249, 193, 35;
+    --ki-info: 65, 150, 250;
+    --ki-light: 200, 185, 210;
+    --ki-dark: 40, 35, 45;
+    --ki-white: 255, 255, 255;
+    
+    /* Frappe Native Primary Variables */
+    --primary: #0f626a;
+
     --font-color: #082f32;
     --body-color: #f5fbfb;
     --bodybg-color: #f6f7fa;
@@ -84,11 +88,11 @@
     --border_color: rgba(0, 0, 0, 0.21);
     --black: 0, 0, 0;
     --border_color: #ebedf0;
-    --bs-dropdown-link-active-color: rgba(var(--primary), 1);
-    --bs-dropdown-link-active-bg: rgba(var(--primary), 0.2);
+    --bs-dropdown-link-active-color: rgba(var(--ki-primary), 1);
+    --bs-dropdown-link-active-bg: rgba(var(--ki-primary), 0.2);
 
     /* Variables mapped for Frappe widgets */
-    --primary-color: #0f626a;
+    --primary-color: var(--primary);
     --primary-hover: #0c4e55;
     --bg-color: var(--bodybg-color);
     --surface-color: #ffffff;
